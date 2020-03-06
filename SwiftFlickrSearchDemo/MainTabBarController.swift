@@ -11,7 +11,8 @@ import UIKit
 class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
-        viewControllers = [createNavController(viewController: HomeViewController(), title: "", imageName: "search")]
+        viewControllers = [createNavController(viewController: HomeViewController(), title: "", imageName: "search"),
+                           createNavController(viewController: FavoriteViewController(), title: "", imageName: "star")]
     }
  
     func createNavController(viewController: UIViewController, title: String, imageName: String) -> UIViewController {

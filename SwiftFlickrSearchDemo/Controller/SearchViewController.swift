@@ -22,10 +22,10 @@ class SearchViewController: UICollectionViewController {
         vc.parameters = paramters
         return vc
     }
-
+    
     private var viewModel: FlickrViewModel?
     private var parameters: SearchParameters?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
@@ -50,6 +50,7 @@ class SearchViewController: UICollectionViewController {
         
         collectionView.register(SearchViewCell.self, forCellWithReuseIdentifier: SearchViewCell.identifier)
         
+        //collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.alwaysBounceVertical = true
         //collectionView.contentInset = .init(top: 8, left: 4, bottom: 8, right: 4)
         
@@ -72,7 +73,15 @@ class SearchViewController: UICollectionViewController {
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 200, height: 200)
+        
+//        let dummyCell = SearchViewCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
+//
+//        dummyCell.model? = Photo
+//        dummyCell.layoutIfNeeded()
+//
+//        let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 1000))
+        
+        return .init(width: 200, height: 250)
     }
     
 }
